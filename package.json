@@ -1,0 +1,30 @@
+{
+  "name": "flash-suite",
+  "version": "1.0.0",
+  "description": "Flash Suite is an open-source web application for compiling and flashing firmware to multiple microcontrollers via UART communication and binary files. Built for flexibility and ease of use, it supports a wide range of devices and streamlines embedded development workflows directly from your browser.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
