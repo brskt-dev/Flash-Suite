@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { GeistProvider, CssBaseline } from '@geist-ui/core';
 import App from './App';
-import './styles/globals.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <GeistProvider>
+    <CssBaseline />
+    <App />
+  </GeistProvider>,
+  document.getElementById('root')
+);

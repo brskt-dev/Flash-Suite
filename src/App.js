@@ -1,11 +1,13 @@
 import React from 'react';
+import { Page, Text, Button } from '@geist-ui/core';
 
 const App = () => {
   return (
-    <div>
-      <h1>Flash Suite</h1>
-      <p>Welcome to the Flash Suite application!</p>
-    </div>
+    <Page>
+      <Text h1>Flash Suite</Text>
+      <Text>This is the main interface for flashing firmware to microcontrollers.</Text>
+      <Button type="success">Connect Device</Button>
+    </Page>
   );
 };
 
