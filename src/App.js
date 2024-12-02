@@ -1,13 +1,15 @@
 import React from 'react';
-import { Page, Text, Button } from '@geist-ui/core';
+import { GeistProvider, CssBaseline, Page } from '@geist-ui/core';
+import FlashInterface from './components/FlashInterface';
 
 const App = () => {
   return (
-    <Page>
-      <Text h1>Flash Suite</Text>
-      <Text>This is the main interface for flashing firmware to microcontrollers.</Text>
-      <Button type="success">Connect Device</Button>
-    </Page>
+    <GeistProvider>
+      <CssBaseline />
+      <Page>
+        <FlashInterface />
+      </Page>
+    </GeistProvider>
   );
 };
 
