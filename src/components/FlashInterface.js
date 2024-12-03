@@ -1,10 +1,10 @@
 /* External Imports */
 import * as Icon from '@geist-ui/icons'
-import FlashSuiteIcon from './FlashSuiteIcon';
 import React, { useState, useEffect } from 'react';
 import { Button, Card, Input, Text, Divider, Toggle, Image, Grid, Link, Spacer } from '@geist-ui/core';
 
 /* Internal Imports */
+import FlashSuiteIcon from './FlashSuiteIcon';
 import '../styles/FlashInterface.css';
 import Header from './Header';
 import { 
@@ -195,7 +195,12 @@ const FlashInterface = ({ toggleTheme, currentTheme }) => {
                                         onClick={() => document.getElementById('avatarInput').click()}
                                     >
                                         {user.avatar ? (
-                                            <img src={user.avatar} alt="Avatar Personalizado" />
+                                            <div className="uploaded-avatar-container">
+                                                <img src={user.avatar} alt="Uploaded Avatar" className="uploaded-avatar-image" />
+                                                <div className="uploaded-avatar-overlay">
+                                                    <Icon.Upload size={30} style={{ color: "#fff" }} />
+                                                </div>
+                                            </div>
                                         ) : (
                                             <span className="avatar-placeholder">
                                                 <Icon.Upload/>
