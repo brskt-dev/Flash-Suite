@@ -22,7 +22,7 @@ const App = () => {
   return (
     <GeistProvider themeType={themeType}>
       <CssBaseline />
-      <Page>
+      <Page style={{width:'calc(100% - 50pt)', padding:'0'}}>
         <FlashInterface toggleTheme={toggleTheme} currentTheme={themeType} />
       </Page>
     </GeistProvider>

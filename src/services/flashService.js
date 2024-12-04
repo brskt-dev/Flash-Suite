@@ -11,26 +11,26 @@ export const connectToDevice = async () => {
     }
   };
   
-  // Lê dados da porta serial e executa um callback para processá-los
-  export const readSerialData = async (port, onDataReceived) => {
-    try {
-      const textDecoder = new TextDecoderStream();
-      const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
-      const reader = textDecoder.readable.getReader();
-  
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-        if (value) {
-          console.log('Dados recebidos:', value); // Log dos dados para debug
-          onDataReceived(value); // Callback com os dados recebidos
-        }
+// Lê dados da porta serial e executa um callback para processá-los
+export const readSerialData = async (port, onDataReceived) => {
+  try {
+    const textDecoder = new TextDecoderStream();
+    const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+    const reader = textDecoder.readable.getReader();
+
+    while (true) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      if (value) {
+        console.log('Dados recebidos:', value); // Log dos dados para debug
+        onDataReceived(value); // Callback com os dados recebidos
       }
-  
-      reader.releaseLock();
-    } catch (error) {
-      console.error('Erro ao ler dados da porta serial:', error);
-      throw error;
     }
-  };
+
+    reader.releaseLock();
+  } catch (error) {
+    console.error('Erro ao ler dados da porta serial:', error);
+    throw error;
+  }
+};
   
